@@ -1,3 +1,5 @@
+# brute force 
+
 def backpack(capacity, weight, value, quantity):
     if quantity == 0 or capacity == 0:
        return 0
