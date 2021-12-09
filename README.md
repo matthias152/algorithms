@@ -1,3 +1,6 @@
+Squashtest1
+Squashtest2
+Squashtest3
 # Algorithms
 Project that implements algorithms for a few problems.
 
