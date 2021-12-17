@@ -11,10 +11,3 @@ def dynamic(capacity, weight, value):
             else:
                 t[i][j] = t[i-1][j]
     return t[q][capacity]
-
-
-value = [5, 10, 20, 50, 100, 200, 450, 1000]
-weight = [1, 4, 6, 16, 24, 32, 36, 40]
-capacity = int(input("Capacity:  "))
-
-print("Max value for this capacity is:", dynamic(capacity, weight, value))
