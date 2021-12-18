@@ -1,6 +1,3 @@
-Squashtest1
-Squashtest2
-Squashtest3
 # Algorithms
 Project that implements algorithms for a few problems.
 
@@ -15,6 +12,27 @@ Project that implements algorithms for a few problems.
    - Implement program that runs every implemented algorithm
    - Create random test data
    - Create option to read/write data to file
+
+# Working with branches
+## Step 1:
+### Check in which branch you are.
+If you are in _master_ branch, go to **Step 3**
+If you are in _other_ branch, go to **Step 2**
+## Step 2:
+You are in _other_ branch. You will need to switch to _master_ branch before creating new branch.
+To swich branch to master, you can use:
+```
+git checkout master
+```
+Then you should _pull_ all chenges on master with:
+```
+git pull
+```
+## Step 3
+Now that you are in _master_ branch, you can safely create new branch with:
+```
+git checkout -b <branch name>
+```
 
 # Git Cheat-Sheet
 To clone repository:
