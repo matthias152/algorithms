@@ -15,21 +15,34 @@ Project that implements algorithms for a few problems.
 
 # Working with branches
 Its safer to work on implementation in other branches than _master_.  
+
 The procedure is to go back to your _master_ branch to be sure that you have up-to-date code.  
+
 For example:  
+
 You have one file named test.py in your _master_ branch.  
+
 You want to add second file, so you create _own_ branch.  
+
 You created second file in your _own_ branch.  
+
 Damian wanted to add 2 files, so he created his _other_ branch.  
+
 He added 2 files to _other_ branch and then merged changes to _master_. So now _master_ have 3 files, but you in your _own_ branch do not have file added to _master_ by Damian, so you have only 2 files, the one that was in _master_ when you created your _own_ branch, and file that you created.  
+
 Now, if you would create new branch, without changing branch back to _master_ and pulling changes it would still do not have files created by Damian, only yours.  
+
 To put it visually:  
+
 This is first scenerio, you create new branch _own2_ from branch _own_ instead of _master_:
 > master (1 file) -> git checkout -b own -> own (2 files) -> git checkout -b own2 -> own2 (2 files)
+
 This is what Damian did:
 > master (1 file) -> git checkout -b other -> other (3 files) -> git push/merge -> master (3 files)
+
 This is the proper way to create your _own2_ branch. If you merged your changes from _own_ branch to _master_, then it have 4 files. If you did not, there are 3 files:
 > master (1 file) -> git checout -b own -> own (2 files) -> git push/merge (optional) -> git checkout master -> master (1/2 files) -> git pull -> master (3/4 files) -> git checkout -b own 2 -> own2 (3/4 files)
+
 ## Step 1:
 ### Check in which branch you are.
 If you are in _master_ branch, go to **Step 3**  
