@@ -1,15 +1,8 @@
-def backpack(capacity, weight, value, quantity):
-    if quantity == 0 or capacity == 0:
+def brute(capacity, weight, value, q):
+    if q == 0 or capacity == 0:
        return 0
-    if (weight[quantity - 1] > capacity):
-       return backpack(capacity, weight, value, quantity - 1)
+    if (weight[q - 1] > capacity):
+       return brute(capacity, weight, value, q - 1)
     else:
-       return max(value[quantity-1] + backpack(capacity-weight[quantity-1], weight, value, quantity-1),
-       backpack(capacity, weight, value, quantity-1))
-
-value = [5, 10, 20, 50, 100, 200, 450, 1000]
-weight = [1, 4, 6, 16, 24, 32, 36, 40]
-quantity = len(value)
-capacity = int(input ("Capacity:  "))
-
-print("Max value for this capacity is: ", backpack(capacity, weight, value, quantity))
+       return max(value[q-1] + brute(capacity-weight[q-1], weight, value, q-1),
+       brute(capacity, weight, value, q-1))

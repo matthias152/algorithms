@@ -5,7 +5,7 @@ class valueofItem:
         self.factor = value / weight
 
     def __lt__(self, other):
-        return self.factor < other.factor  # not sure how it works
+        return self.factor < other.factor
 
 
 class greed:
@@ -25,12 +25,3 @@ class greed:
                 total += curvalue
 
         return total
-
-
-if __name__ == "__main__":
-    value = [5, 10, 20, 50, 100, 200, 450, 1000]  # 5, 2.5, 3.3, 3.125, 4, 6.25
-    weight = [1, 4, 6, 16, 24, 32, 36, 40]        # 12.5, 25
-    capacity = float(input("Capacity:  "))
-
-    overall = greed.calculateTheValue(weight, value, capacity)
-    print("Max value for this capacity is: ", round(overall))
