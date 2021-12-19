@@ -4,14 +4,31 @@ from greedy import *
 from timeit import default_timer as timer
 import random
 
-def random:
-    for i in range(8):
-        random.randint(0,1500)
 
 value = [5, 10, 20, 50, 100, 200, 450, 1000]
 weight = [1, 4, 6, 16, 24, 32, 36, 40]
 q = len(value)
 file1 = open("numbers.txt","a")
+
+r = int(input("Do you want to generate random values? 1-Y 2-N "))
+
+def generate():
+    del value[:]
+    del weight[:]
+    for i in range(8):
+        value.append(random.randint(1, 500))
+    for j in range(8):
+        weight.append(random.randint(1, 500))
+
+match r:
+    case 1:
+        generate()
+        print("Random values generated.")
+    case 2:
+        print("Continuing.")
+    case _:
+        print("Wrong answer.")
+        quit()
 
 
 while True:
@@ -54,5 +71,5 @@ while True:
             print("Wrong answer.")
             quit()
 
-file1.write("\n"" \n")
+file1.write("\n")
 file1.close()
