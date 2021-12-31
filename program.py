@@ -1,14 +1,16 @@
-from dynamicc import dynamic
-from brute import brute
-from greedy import *
+import sys
+sys.path.append("..")
+from knapsack.dynamicc import dynamic
+from knapsack.brute import brute
+from knapsack.greedy import *
 from timeit import default_timer as timer
 import random
 
 
 value = [5, 10, 20, 50, 100, 200, 450, 1000]
 weight = [1, 4, 6, 16, 24, 32, 36, 40]
-file1 = open("numbers.txt", "a")
-file2 = open("values.txt", "r")
+file1 = open("knapsack/numbers.txt", "w")
+file2 = open("knapsack/values.txt", "r")
 
 r = int(input("RNG - 1, READ - 2, CONTINUE - 3: "))
 
