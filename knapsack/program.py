@@ -7,10 +7,11 @@ import random
 
 value = [5, 10, 20, 50, 100, 200, 450, 1000]
 weight = [1, 4, 6, 16, 24, 32, 36, 40]
-q = len(value)
-file1 = open("numbers.txt","a")
+file1 = open("numbers.txt", "a")
+file2 = open("values.txt", "r")
 
-r = int(input("Do you want to generate random values? 1-Y 2-N "))
+r = int(input("RNG - 1, READ - 2, CONTINUE - 3: "))
+
 
 def generate():
     del value[:]
@@ -20,15 +21,30 @@ def generate():
     for j in range(8):
         weight.append(random.randint(1, 500))
 
+
+def reading():
+    del value[:], weight[:]
+    for i in file2.readline().split(','):
+        value.append(int(i))
+    for i in file2.readline().split(','):
+        weight.append(int(i))
+
+
 match r:
     case 1:
         generate()
         print("Random values generated.")
     case 2:
+        reading()
+        print("Values readed from file.")
+    case 3:
         print("Continuing.")
     case _:
         print("Wrong answer.")
         quit()
+
+
+q = len(value)
 
 
 while True:
@@ -73,3 +89,4 @@ while True:
 
 file1.write("\n")
 file1.close()
+file2.close()
